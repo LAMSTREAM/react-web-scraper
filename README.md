@@ -1,46 +1,62 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Web Scraper
 
-## Available Scripts
+This project is a single-page web application (SPA) built with React and TypeScript. It provides a modern, interactive interface with the following key features:
 
-In the project directory, you can run:
+- **Axios** to interact with a backend API service.
+- **Auth0** for authentication.
+- **React Router** for routing.
+- **Redux** for state management.
+- **Tailwind CSS** and **ShadCN** for component building and styling.
 
-### `yarn start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. Install Dependencies
+First, ensure that **Yarn** is installed, and then install project dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+# Install Yarn globally
+npm install -g yarn
 
-### `yarn test`
+# Install project dependencies
+yarn
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Setup Environment Variables
+Copy the `.env.example` file to `.env`
 
-### `yarn build`
+```zsh
+cp .env.example .env
+```
+Configure the following variables:
+```bash
+# React
+PORT=3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Auth0
+AUTH0_DOMAIN=
+AUTH0_CLIENT_ID=
+AUTH0_AUDIENCE=
+REACT_APP_AUTH0_DOMAIN=${AUTH0_DOMAIN}
+REACT_APP_AUTH0_CLIENT_ID=${AUTH0_CLIENT_ID}
+REACT_APP_AUTH0_AUDIENCE=${AUTH0_AUDIENCE}
+REACT_APP_REDIRECT_URL=http://localhost:3000
+REACT_APP_API_SERVER_URL=http://localhost:5011/api
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Run the Application
+To start the application in development mode, use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+yarn start
+```
 
-### `yarn eject`
+The application should now be running at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Additional Information
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Auth0**: Ensure that `AUTH0_DOMAIN`, `AUTH0_CLIENT_ID`, and `AUTH0_AUDIENCE` are configured for your Auth0 application.
+- **Backend API**: The app assumes the backend API server is running at `http://localhost:5011/api`.
+- **Routing**: The app uses React Router for navigation between different pages.
+- **State Management**: Redux is used to manage the application state.
+- **Styling**: Tailwind CSS and ShadCN are used to style components for a consistent and customizable UI.
